@@ -13,22 +13,58 @@
 
 <body>
 
-<div data-role="page">
+<div data-role="page" id="main">
 	<div data-role="header">
 
-	<h1>Welcome</h1>
+		<h1>Welcome</h1>
 
 	</div> <!-- /header -->
 
 	<div role="main" class="ui-content">
 
-	<h2 id="currentTemp">Wetter</h2>
-	<p id="source"></p>
+		<h2 id="currentTemp">Wetter</h2>
+		<p id="source"></p>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sint esse, cum accusantium saepe velit, quaerat ducimus, quod necessitatibus, ex quidem minima corrupti labore enim nam molestias tempore! Voluptate, debitis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sint esse, cum accusantium saepe velit, quaerat ducimus, quod necessitatibus, ex quidem minima corrupti labore enim nam molestias tempore! Voluptate, debitis.</p>
 
-	</div> <!-- /ui-conent -->
+		<br />
 
 
+		<p>
+			<a href="#sub" data-transition="flip" class="ui-btn">Subpage</a>
+			
+		</p>
+
+
+	</div> <!-- /content -->
+</div> <!-- /page -->
+
+
+<!-- Beginn Subpage -->
+	
+<div data-role="page" id="sub">
+	<div data-role="header">
+
+		<h1>Subspage</h1>
+
+	</div> <!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<h2 id="currentTemp">Wetter</h2>
+		<p id="source"></p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sint esse, cum accusantium saepe velit, quaerat ducimus, quod necessitatibus, ex quidem minima corrupti labore enim nam molestias tempore! Voluptate, debitis.</p>
+
+		<p>
+			<a href="#main" data-transition="flip" data-direction="reverse" class="ui-btn">back</a>
+		</p>
+
+
+	</div> <!-- /content -->
+	
+</div> <!-- /page -->
+
+	<script src="js/script.js"></script>
 </body>
 </html>
