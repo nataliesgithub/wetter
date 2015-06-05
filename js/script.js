@@ -11,4 +11,12 @@ $(document).ready(function(){
 	});
 
 	
+	//console.log(navigator.geolocation);
+	navigator.geolocation.getCurrentPosition(function(position) {
+
+		console.log(position);
+
+	});
+
+	
 });
