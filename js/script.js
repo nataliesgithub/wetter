@@ -48,8 +48,9 @@ $(document).ready(function(){
 				}).done(function(data){
 
 					console.log(data);
+					//$("#currentLoc").text(data.results[0].formatted_address); 
+					$("#currentLoc").text(data.results[0].address_compponents[2].long_name); 
 
-					$("#currentLoc").text(data.results[0].formatted_address);
 				
 				});
 
