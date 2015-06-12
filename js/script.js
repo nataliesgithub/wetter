@@ -26,9 +26,32 @@ $(document).ready(function(){
 		}).done(function(data) {
 				
 				console.log(data);
+				$("#currentTemp").text(data.currently.apparentTemperature + "°C");
+				//$("#source").text(data.flags['metno-license']); 
+				//Wenn ein Sonderzeichen im Key vorkommt, muss dieser mit eckigen Klammern geschrieben und kann nicht mehr via Punkt-Notation angesteuert werden
+				
+				//GOOGLE GEO-CODING ANFRAGE:
+				$.ajax({
+					
+					url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyDgYh-UffzCV54XCcReML4WSqyb0_zv8x8',
+					
+					data:{
+					 	
+					 	latlng: koordinaten.latitude + ',' + koordinaten.longitude, 
+					 	
+					 	key: 'AIzaSyDgYh-UffzCV54XCcReML4WSqyb0_zv8x8';
+					 	
+					 	language: 'de';
+					}
+
+				}).done(function(data){
+
+					console.log(data);
+				
+				});
+
 
 		});
-
 	});
 	
 });
