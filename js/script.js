@@ -44,9 +44,12 @@ $(document).ready(function(){
 					 	language: 'de'
 					}
 
+
 				}).done(function(data){
 
 					console.log(data);
+
+					$(".currentLoc").text(data.results[0].formatted_address);
 				
 				});
 
