@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 					console.log(data);
 
-					$(".currentLoc").text(data.results[0].formatted_address);
+					$("#currentLoc").text(data.results[0].formatted_address);
 				
 				});
 
