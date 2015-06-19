@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+	var skycons = new Skycons({
+		color: "grey",
+		resizeClear: true
+	});
+
 	navigator.geolocation.getCurrentPosition(function(position) {
 
 		var koordinaten = {
@@ -51,11 +56,26 @@ $(document).ready(function(){
 					//$("#currentLoc").text(data.results[0].formatted_address); 
 					$("#currentLoc").text(data.results[0].address_components[2].long_name); 
 
+					$(".icon1").text(data.results[0].icon); 
+
 				
 				});
 
 
 		});
 	});
+
+
+	skycons.add($('.icon1')[0], Skycons.RAIN); //jQuery Objetkt 
+
+	skycons.play();
+	
+	/*
+	//anaonyme Funktion oder Funktionsreferenz übergeben (definierte Funktion) bei set Timeout
+	setTimeout(function() {
+
+		skycons.set($('.icon1')[0], Skycons.PARTLY_CLOUDY_DAY);
+
+	}, 5000); */
 	
 });
