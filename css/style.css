@@ -1,11 +1,42 @@
+ *{
+ 	text-shadow: none;
+ 	font-family: 'Dosis', sans-serif;
+ 	font-size: 18px;
+ 	color: grey;
+ 	text-align: center;
+
+ 	
+ }
+
+h1{
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+}
+
+.ui-content{
+    background: transparent url(images/bg.jpg) no-repeat center center;
+}
+
+
 #currentTemp{
 	font-size: 40px;
-	text-align: center;
+	font-weight: 300;
+	letter-spacing: 0.1em;
+
 }
+
+
+#currentLoc{
+	font-size: 35px;
+	text-align: center;
+	font-weight: 300;
+	border:none;
+}
+
 
 canvas{
 	display: block;
-	height: 280; 
-	width: 280;
+	height: 250; 
+	width: 250;
 	margin: auto;
 }

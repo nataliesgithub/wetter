@@ -19,7 +19,6 @@ $(document).ready(function(){
 			
 			data: {
 
-				//?units=si&lang=de in php z.b.
 				units: 'si',
 				lang: 'de'
 			},
@@ -31,9 +30,13 @@ $(document).ready(function(){
 		}).done(function(data) {
 				
 				//console.log(data);
-				$("#currentTemp").text(data.currently.apparentTemperature + "°C");
+
+				//Temperatur
+				$("#currentTemp").text(data.currently.apparentTemperature + " °C");
+				//Wetterbeschreibung
+				$("#currentDesc").text(data.currently.summary);
+
 				//$("#source").text(data.flags['metno-license']); 
-				//Sonderzeichen im Key: in eckigen Klammern geschrieben und kann nicht mehr via Punkt-Notation angesteuert werden
 
 				skycons.add($('.icon1')[0], data.currently.icon);
 				skycons.play();
@@ -47,18 +50,18 @@ $(document).ready(function(){
 					data:{
 					 	
 					 	latlng: koordinaten.latitude + ',' + koordinaten.longitude, 
-					 	
 					 	key: 'AIzaSyDgYh-UffzCV54XCcReML4WSqyb0_zv8x8',
-					 	
 					 	language: 'de'
 					}
 
-
 				}).done(function(data){
-
 					//console.log(data);
 					//$("#currentLoc").text(data.results[0].formatted_address); 
+
+					//Location
 					$("#currentLoc").text(data.results[0].address_components[2].long_name); 
+					//Adress
+					$("#currentAddr").text(data.results[0].formatted_address);;
 				});
 
 

@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+	<title>Wetter App</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-
 	<!-- Web app will display in full screen mode when launched from the Web Clip icon -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
-
-	 <!-- Makes status bar partially transparent and additionally removes it from the document flow -->
+	<!-- Makes status bar partially transparent and additionally removes it from the document flow -->
  	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 	<!-- Android-proprietary meta tag -->
 	<meta name="mobile-web-app-capable" content="yes">
-
-
 	<!-- Windows-proprietary meta tag -->
 	<meta name="MobileOptimized" content="320"/>
-
-
 	<!-- Mobile Internet Explorer allows us to activate ClearType technology for smoothing fonts for easy reading -->
 	<meta http-equiv="cleartype" content="on">
-
-
-
-	<title>Wetterapplikation</title>
-
+	<!-- import -->
 	<link rel="icon" href="images/favicon.ico">
-	
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<!-- font -->
+	<link href='http://fonts.googleapis.com/css?family=Dosis:300' rel='stylesheet' type='text/css'>
+	<!-- jquery -->
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	
 	<!-- sky icons js -->
 	<script src="js/skycons.js"></script>
-
 	<!-- own js -->
 	<script src="js/script.js"></script>
-
 </head>
-
 <body>
-
 	<div data-role="page" id="main">
-		<div data-role="header">
 
-			<h1 id="currentLoc">Welcome</h1>
+		<div data-role="header">
+				
+			<h1>Wetter App</h1>
 
 		</div> <!-- /header -->
 
 		<div role="main" class="ui-content">
+			<br>
+			<!-- Ortschaft -->
+			<div id="currentLoc">loading..</div>
+			<div>. . . . . . . . . . </div>
+			<br>
 
-			<h2 id="currentTemp">Wetter</h2>
-			<p id="source"></p>
+			<!-- Wetter-Icon -->
+			<canvas class="icon1" width="128" height="128"></canvas>
+			<br>
+			<!-- Wetterbeschreibung -->
+            <span id="currentDesc">loading..</span><span>, bei</span>
+
+			<!-- Temperaturanzeige -->
+			<div id="currentTemp">loading...</div>
+			<div id="source"></div>
 			<div class="longitude"></div>
 			<div class="latitude"></div>
 			<div class="accuracy"></div>
+			<br>
+			<br>
+			<div>
+				<a href="#sub" data-transition="flip" class="ui-btn">Karte</a>
+			</div> <!-- /button -->
 			
-			<canvas class="icon1" width="128" height="128"></canvas>
-
-			<br />
-
-
-			<p>
-				<a href="#sub" data-transition="flip" class="ui-btn">Subpage</a>
-				
-			</p>
-
-
 		</div> <!-- /content -->
+
+		 <div data-role="footer">
+
+           	<p id="currentAddr">loading..</p>
+
+        </div><!-- /footer -->
+
 	</div> <!-- /page -->
 
 
 
 
-
-<!-- Beginn Subpage1 -->
+<!-- Beginn Subpage -->
 	
 	<div data-role="page" id="sub">
 		<div data-role="header" data-add-back-btn="true">
 
-			<h1>Subspage</h1>
+			<h1>Karte</h1>
 
 		</div> <!-- /header -->
 
 		<div role="main" class="ui-content">
 
-			<h2 id="currentTemp">Wetter</h2>
+			<h2 id="currentTemp">Karte</h2>
 			<p id="source"></p>
 
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sint esse, cum accusantium saepe velit, quaerat ducimus, quod necessitatibus, ex quidem minima corrupti labore enim nam molestias tempore! Voluptate, debitis.</p>
