@@ -34,6 +34,10 @@ $(document).ready(function(){
 				$("#currentTemp").text(data.currently.apparentTemperature + "°C");
 				//$("#source").text(data.flags['metno-license']); 
 				//Sonderzeichen im Key: in eckigen Klammern geschrieben und kann nicht mehr via Punkt-Notation angesteuert werden
+
+				skycons.add($('.icon1')[0], data.currently.icon);
+				skycons.play();
+
 				
 				//GOOGLE GEO-CODING ANFRAGE:
 				$.ajax({
@@ -55,12 +59,9 @@ $(document).ready(function(){
 					//console.log(data);
 					//$("#currentLoc").text(data.results[0].formatted_address); 
 					$("#currentLoc").text(data.results[0].address_components[2].long_name); 
-
-					skycons.add($('.icon1')[0], data.currently.icon); //jQuery Objetkt 
-					skycons.play();
-
-				
 				});
+
+
 
 
 		});
