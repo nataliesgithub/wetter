@@ -49,8 +49,6 @@ $(document).ready(function(){
 					 	language: 'de'
 					}
 
-					dataType: 'jasonp';
-
 
 				}).done(function(data){
 
