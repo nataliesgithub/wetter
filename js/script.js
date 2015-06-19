@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 		}).done(function(data) {
 				
-				console.log(data);
+				//console.log(data);
 				$("#currentTemp").text(data.currently.apparentTemperature + "°C");
 				//$("#source").text(data.flags['metno-license']); 
 				//Sonderzeichen im Key: in eckigen Klammern geschrieben und kann nicht mehr via Punkt-Notation angesteuert werden
@@ -49,26 +49,26 @@ $(document).ready(function(){
 					 	language: 'de'
 					}
 
+					dataType: 'jasonp';
+
 
 				}).done(function(data){
 
-					console.log(data);
+					//console.log(data);
 					//$("#currentLoc").text(data.results[0].formatted_address); 
 					$("#currentLoc").text(data.results[0].address_components[2].long_name); 
 
-					$(".icon1").text(data.results[0].icon); 
+					skycons.add($('.icon1')[0], data.currently.icon); //jQuery Objetkt 
+					skycons.play();
 
 				
 				});
 
 
 		});
+
 	});
 
-
-	skycons.add($('.icon1')[0], Skycons.RAIN); //jQuery Objetkt 
-
-	skycons.play();
 	
 	/*
 	//anaonyme Funktion oder Funktionsreferenz übergeben (definierte Funktion) bei set Timeout
