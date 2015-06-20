@@ -5,7 +5,6 @@
  	color: grey;
  	text-align: center;
 
- 	
  }
 
 h1{
@@ -13,30 +12,64 @@ h1{
 	letter-spacing: 0.2em;
 }
 
-.ui-content{
-    background: transparent url(images/bg.jpg) no-repeat center center;
+ div[data-role ="page"]{
+ 	height:100%;
+   	width: 100%;
+    background: url(images/bg.jpg)) no-repeat center center fixed; 
+    background-size: cover;
+    /*background-size:100% 100%;*/
 }
-
 
 #currentTemp{
 	font-size: 40px;
 	font-weight: 300;
 	letter-spacing: 0.1em;
-
 }
 
 
 #currentLoc{
 	font-size: 35px;
-	text-align: center;
 	font-weight: 300;
 	border:none;
 }
 
+#currentAddr{
+	font-size: 15px;
+	font-weight: 300;
+	letter-spacing: 0.1em;
+}
+
+.currentDesc{
+	font-size: 16px;
+	font-weight: 300;
+	background-color: #ffffff;
+	color: #35baff;
+}
 
 canvas{
 	display: block;
 	height: 250; 
 	width: 250;
 	margin: auto;
+}
+
+#btn{
+	font-size: 15px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 300;
+	width: 100px;
+	height: 20px;
+	margin: auto;
+	border: 1px;
+	background-color: transparent;
+
+}
+
+#footer{
+	font-size: 16px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 300;
+	border:none;
+	background-color: transparent;
+
 }
