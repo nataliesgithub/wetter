@@ -23,17 +23,22 @@
 	<!-- jquery -->
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<!-- Google Maps -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgYh-UffzCV54XCcReML4WSqyb0_zv8x8"></script>
 	<!-- sky icons js -->
 	<script src="js/skycons.js"></script>
 	<!-- own js -->
 	<script src="js/script.js"></script>
+
 </head>
 <body>
 	<div data-role="page" id="main">
 
-		<div data-role="header">
+		<div data-role="header" id="head">
 				
 			<h1>Wetter App</h1>
+            
+            <a id="btn_map" class="ui-btn ui-btn-right ui-btn-icon-right ui-icon-location ui-btn-inline" href="#sub" data-transition="flip"></a>
 
 		</div> <!-- /header -->
 
@@ -47,6 +52,7 @@
 			<!-- Wetter-Icon -->
 			<canvas class="icon1" width="128" height="128"></canvas>
 			<br>
+			
 			<!-- Wetterbeschreibung -->
             <span id="currentDesc">loading..</span><span>, bei</span>
 
@@ -58,9 +64,6 @@
 			<div class="accuracy"></div>
 			<br>
 			<br>
-			<div id="btn">
-                <a id="btn" class="ui-btn ui-btn-inline" href="#sub" data-transition="flip">zur Karte</a>
-            </div><!-- /button -->
 			
 		</div> <!-- /content -->
 		<br>
@@ -80,24 +83,22 @@
 <!-- Start Subpage -->
 	
 	<div data-role="page" id="sub">
-		<div data-role="header" data-add-back-btn="true">
+	
+		<div data-role="header" id="head_sub">
 
-			<h1>Wetter App</h1>
+		<a id="btn_back" class="ui-btn ui-btn-icon-left ui-icon-carat-l ui-nodisc-icon ui-btn-inline" href="#main" data-transition="flip" data-direction="reverse"></a>
+
+			<h1>Karte</h1>
 
 		</div> <!-- /header -->
 
 		<div role="main" class="ui-content">
 
-			<h2 id="currentTemp">Karte</h2>
-			<p id="source"></p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sint esse, cum accusantium saepe velit, quaerat ducimus, quod necessitatibus, ex quidem minima corrupti labore enim nam molestias tempore! Voluptate, debitis.</p>
-
-
+			<div class="map-canvas"></div>
+			
 		</div> <!-- /content -->
 		
 	</div> <!-- /page -->
-
 
 </body>
 </html>
